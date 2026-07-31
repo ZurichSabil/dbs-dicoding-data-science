@@ -1,0 +1,42 @@
+# Menjalankan skrip
+py main.py
+
+# Menjalankan unit test pada folder tests
+py -m unittest discover tests -v
+
+# Menjalankan test coverage
+coverage run -m pytest tests
+coverage report
+
+# Hasil coverage
+Name                 Stmts   Miss  Cover
+----------------------------------------
+utils/extract.py        67     20    70%
+utils/load.py           15      6    60%
+utils/transform.py      70     19    73%
+----------------------------------------
+TOTAL                  152     45    70%
+
+# Penjelasan jumlah data
+Website fashion-studio.dicoding.dev memiliki 50 halaman.
+Setiap halaman menampilkan 20 produk yang berbeda.
+Total data mentah: 1000 baris.
+
+Setelah transformasi:
+- Hapus Unknown Product: 100 baris
+- Hapus produk dengan rating invalid dan harga kosong: 33 baris
+- Hasil akhir: 867 baris data bersih.
+
+Tipe data sudah disesuaikan:
+- Title: object
+- Size: object  
+- Gender: object
+- Price: float64
+- Rating: float64
+- Colors: int64
+
+# URL Google Sheets:
+(Tidak menggunakan Google Sheets, hanya CSV)
+
+# Catatan:
+Data sudah bersih, tidak ada null, tidak ada duplikat, semua harga dalam Rupiah (×16.000), jumlah data sesuai yang diminta reviewer yaitu 867 rows.
